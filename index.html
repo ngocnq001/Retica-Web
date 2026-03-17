@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet"
+  />
+  <!-- ===================  -->
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Roboto", sans-serif;
+      font-optical-sizing: auto;
+      font-style: normal;
+    }
+
+    body {
+      background: #0b0b0b;
+      color: #fff;
+    }
+
+    /* HERO IMAGE */
+    .project-details-image {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .card-image {
+      width: 120px;
+      border-radius: 24px;
+    }
+
+    /* TITLE */
+    .project.title {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 600;
+      margin-top: 24px;
+    }
+
+    .platform-tag {
+      font-size: 14px;
+      background: #1f1f1f;
+      padding: 4px 10px;
+      border-radius: 12px;
+      margin-left: 8px;
+      color: #aaa;
+    }
+
+    /* SUBTITLE */
+    .project.subtitle {
+      text-align: center;
+      color: #aaa;
+      margin-top: 12px;
+      font-size: 15px;
+    }
+
+    /* MAIN CONTAINER */
+    .project.container {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 60px;
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    /* COLUMN */
+    .column-title {
+      font-size: 30px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .detail-text {
+      color: #bbb;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+
+    /* LIST */
+    ul {
+      margin-bottom: 8px;
+    }
+
+    /* LINK */
+    a {
+      color: #4da3ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* SHOWCASE */
+    .showcase-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    /* IMAGE */
+    .project.image {
+      width: 100%;
+      border-radius: 14px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    /* HOVER EFFECT giống site */
+    .project.image:hover {
+      transform: scale(1.04);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    /* TOP BUTTON */
+    #topButton {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #1c1c1c;
+      border: none;
+      padding: 12px 14px;
+      border-radius: 50%;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #topButton:hover {
+      background: #333;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .project.container {
+        grid-template-columns: 1fr;
+      }
+
+      .showcase-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header {
+        padding: 20px;
+      }
+
+      .project.title {
+        font-size: 24px;
+      }
+
+      .showcase-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <!-- ===================  -->
+  <body>
+    <div class="project screen">
+      <div class="project main-div">
+        <div class="project-details-image">
+          <img
+            src="./assets/retica_logo.png"
+            alt="Retica - Photo Editor"
+            class="card-image"
+          />
+        </div>
+        <div class="project title">
+          Retica - Photo Editor <span class="platform-tag">Android</span>
+        </div>
+        <div class="project subtitle">
+          A photography app, allowing capturing, editing images and more...
+        </div>
+        <br />
+        <div class="project container">
+          <div class="project column column-1">
+            <div class="project column-title">Features</div>
+            <ul>
+              <li class="project detail-text">Add filters to images.</li>
+            </ul>
+            <ul>
+              <li class="project detail-text">
+                Adjust image parameters such as brightness, contrast,
+                saturation, vignette...
+              </li>
+            </ul>
+            <ul>
+              <li class="project detail-text">
+                Adjust different color profiles.
+              </li>
+            </ul>
+            <ul>
+              <li class="project detail-text">Apply frame to image.</li>
+            </ul>
+            <ul>
+              <li class="project detail-text">
+                Add stickers, text or image brush overlay on image.
+              </li>
+            </ul>
+            <ul>
+              <li class="project detail-text">
+                Add makeup or beauty related adjustments.
+              </li>
+            </ul>
+            <ul>
+              <li class="project detail-text">
+                Transform your image into an artist style using AI Artistic.
+              </li>
+            </ul>
+            <ul>
+              <li class="project detail-text">
+                Remove background, remove object and enhance image on-device.
+              </li>
+            </ul>
+            <br /><br />
+            <div class="project column-title">Technical Details</div>
+            <ul>
+              <li class="project detail-text">
+                Initially used OpenCV to handle image editting, later create
+                OpenGL pipeline and use it instead to improve performance.
+              </li>
+            </ul>
+            <ul>
+              <li class="project detail-text">
+                Integrate multiple Tensorflow Lite models to use on-device such
+                as Subject Segmentation (for background remove), Inpainting (for
+                object remove), Upsampling (for enhance) and Style Transfer (for
+                AI Artistic).
+              </li>
+            </ul>
+            <ul>
+              <li class="project detail-text">
+                Integrate Face Landmark model using Google Mediapipe to assist
+                in makeup features.
+              </li>
+            </ul>
+            <ul>
+              <li class="project detail-text">
+                Implement custom sticker overlays and image/text brush from
+                scratch.
+              </li>
+            </ul>
+            <ul>
+              <li class="project detail-text">
+                MVVM app architecture. Single activities with Fragments and
+                Navigation2.
+              </li>
+            </ul>
+            <ul>
+              <li class="project detail-text">Jetpack Compose UI.</li>
+            </ul>
+            <ul>
+              <li class="project detail-text">
+                Dependencies injection using Koin.
+              </li>
+            </ul>
+            <ul>
+              <li class="project detail-text">
+                Monetization: Contains Admob ads.
+              </li>
+            </ul>
+            <br /><br /><br />
+            <div class="project column-title">
+              Download :
+
+              <a
+                target="_blank"
+                href="https://firebasestorage.googleapis.com/v0/b/era003-gba-emulator.firebasestorage.app/o/Retica-release.apk?alt=media&amp;token=bd746429-f4b8-450d-9364-4fbf3ce8fb3e"
+                >Release APK</a
+              >
+            </div>
+            <br /><br />
+            <div class="subtitle">
+              Disclaimer: Install only on your test device. I'm not responsible
+              for any harm or damage caused to your device after you install
+              downloaded app. APK may have been modified to serve the demo
+              purposes.
+            </div>
+          </div>
+          <div class="project column column-2">
+            <div class="project column-title">Showcase</div>
+            <div class="projects showcase-container">
+              <img src="./assets/retica1.webp" class="project image" /><img
+                src="./assets/retica2.webp"
+                class="project image"
+              /><img src="./assets/retica3.webp" class="project image" /><img
+                src="./assets/retica4.webp"
+                class="project image"
+              /><img src="./assets/retica5.webp" class="project image" /><img
+                src="./assets/retica6.webp"
+                class="project image"
+              /><img src="./assets/retica7.webp" class="project image" /><img
+                src="./assets/retica8.webp"
+                class="project image"
+              /><img src="./assets/retica9.webp" class="project image" /><img
+                src="./assets/retica10.webp"
+                class="project image"
+              /><img src="./assets/retica11.webp" class="project image" /><img
+                src="./assets/retica12.webp"
+                class="project image"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <button id="topButton" title="Go to top" style="visibility: hidden">
+        <i class="fas fa-hand-point-up" aria-hidden="true"></i>
+      </button>
+    </div>
+  </body>
+</html>
